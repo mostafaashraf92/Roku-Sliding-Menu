@@ -1,0 +1,48 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+
+<component name = "ListItem" extends = "Group">
+
+  <interface >
+    <field id = "itemContent" type = "node" onChange = "showcontent"/>
+    <field id = "rowIndex" type = "int" />
+  </interface>
+
+  <script type="text/brightscript" uri="pkg:/components/RowListItem.brs" />
+
+
+  <children >
+      <Poster 
+      id = "itemPoster" 
+      translation = "[ 20, 20 ]" uri="pkg:/images/home-icon.png"
+      width = "32.0" 
+      height = "32.0" />
+
+      <Label 
+      id = "itemLabel" 
+      translation = "[ -300, 20 ]" 
+      horizAlign = "center" 
+      visible = "false"
+      width = "150" font="font:SmallestSystemFont" />
+
+      <Animation id="transAnimationIn"
+       duration="0.2"
+       repeat="false"
+       easeFunction="linear" >
+    <Vector2DFieldInterpolator id = "translateInInterp"
+        key="[0.0, 1.0]"
+        keyValue="[ [-300, 20.0], [50.0, 20.0] ]"
+    fieldToInterp="itemLabel.translation" />
+  </Animation>
+  
+      <Animation id="transAnimationOut"
+       duration="0.2"
+       repeat="false"
+       easeFunction="linear" >
+    <Vector2DFieldInterpolator id = "translateOutInterp"
+        key="[0.0, 1.0]"
+        keyValue="[ [50, 20.0], [-300.0, 20.0] ]"
+    fieldToInterp="itemLabel.translation" />
+  </Animation>
+  </children>
+
+</component>
