@@ -11,6 +11,13 @@ end sub
 sub setListContent()
   print "##SetListContent"
   m.rowList.content = CreateObject("roSGNode", "RowListContent")
+  m.rowList.jumpToItem = m.global.menuSelectedIndex
+end sub
+
+sub onRowItemSelected()
+  print "##onRowItemSelected"; m.rowList.rowItemSelected[0]
+  m.global.menuSelectedIndex = m.rowList.rowItemSelected[0]
+  closeMenu()
 end sub
 
 sub openMenu()

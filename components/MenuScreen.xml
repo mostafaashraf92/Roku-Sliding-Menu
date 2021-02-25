@@ -4,7 +4,8 @@
 <component name = "MenuScreen" extends = "Group" >
 
 <interface > 
-</interface>
+		<field id="rowItemSelected" type="node" alwaysNotify="true" alias="list.rowItemSelected" onchange="onRowItemSelected" />
+    </interface>
 
 
   <script type="text/brightscript" uri="pkg:/components/MenuScreen.brs" />
@@ -23,8 +24,8 @@
       itemComponentName = "ListItem" 
       numRows = "4" 
       itemSize = "[ 100, 80 ]" 
-      rowItemSize = "[ [100, 50] ]" 
-      itemSpacing = "[ 0, 10 ]" 
+      rowItemSize = "[ [100, 80] ]" 
+      itemSpacing = "[ 0, 2 ]" 
       showRowLabel = "[ false ]" 
       drawFocusFeedback = "false" 
       vertFocusAnimationStyle = "floatingFocus" 
