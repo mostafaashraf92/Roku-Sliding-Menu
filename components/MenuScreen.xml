@@ -22,7 +22,7 @@
       translation = "[300, 160 ]" 
       itemComponentName = "ListItem" 
       numRows = "4" 
-      itemSize = "[ 100, 100 ]" 
+      itemSize = "[ 100, 80 ]" 
       rowItemSize = "[ [100, 50] ]" 
       itemSpacing = "[ 0, 10 ]" 
       showRowLabel = "[ false ]" 
@@ -42,7 +42,7 @@
     fieldToInterp="listContainer.translation" />
      <Vector2DFieldInterpolator id = "expandRowItemSizeInterp"
         key="[0.0, 1.0]"
-         keyValue="[ [100.0, 100.0], [200.0, 100.0] ]"
+         keyValue="[ [100.0, 80.0], [200.0, 80.0] ]"
     fieldToInterp="list.itemSize" />
     <FloatFieldInterpolator id = "expandRectangleInterp"
         key="[0.0, 1.0]"
@@ -68,7 +68,7 @@
     fieldToInterp="listContainer.translation" />
      <Vector2DFieldInterpolator id = "shrinkRowItemSizeInterp"
         key="[0.0, 1.0]"
-         keyValue="[ [200.0, 100.0] , [100.0, 100.0]]"
+         keyValue="[ [200.0, 80.0] , [100.0, 80.0]]"
     fieldToInterp="list.itemSize" />
     <FloatFieldInterpolator id = "shrinkRectangleInterp"
         key="[0.0, 1.0]"

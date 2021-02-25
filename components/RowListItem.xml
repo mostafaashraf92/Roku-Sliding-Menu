@@ -4,7 +4,10 @@
 
   <interface >
     <field id = "itemContent" type = "node" onChange = "showcontent"/>
+    <field id = "rowHasFocus" type = "boolean" onChange = "onItemFocused"/>
+    <field id = "rowFocusPercent" type = "float" onChange = "showRowfocus"/>
     <field id = "rowIndex" type = "int" />
+    
   </interface>
 
   <script type="text/brightscript" uri="pkg:/components/RowListItem.brs" />
@@ -13,14 +16,18 @@
   <children >
       <Poster 
       id = "itemPoster" 
-      translation = "[ 20, 20 ]" uri="pkg:/images/home-icon.png"
+      translation = "[ 30, 20 ]" uri="pkg:/images/home-icon.png"
       width = "32.0" 
+      opacity = "0.50"
       height = "32.0" />
 
       <Label 
       id = "itemLabel" 
-      translation = "[ -300, 20 ]" 
+      translation = "[ -300, 25 ]" 
       horizAlign = "center" 
+      vertAlign = "top"
+      color = "0xFFFFFF"
+      opacity = "0.5"
       visible = "false"
       width = "150" font="font:SmallestSystemFont" />
 
@@ -30,7 +37,7 @@
        easeFunction="linear" >
     <Vector2DFieldInterpolator id = "translateInInterp"
         key="[0.0, 1.0]"
-        keyValue="[ [-300, 20.0], [50.0, 20.0] ]"
+        keyValue="[ [-300, 25.0], [60.0, 25.0] ]"
     fieldToInterp="itemLabel.translation" />
   </Animation>
   
@@ -40,8 +47,12 @@
        easeFunction="linear" >
     <Vector2DFieldInterpolator id = "translateOutInterp"
         key="[0.0, 1.0]"
-        keyValue="[ [50, 20.0], [-300.0, 20.0] ]"
+        keyValue="[ [60, 25.0], [-300.0, 25.0] ]"
     fieldToInterp="itemLabel.translation" />
+     <FloatFieldInterpolator id = "reduceIconOpacityInterp"
+        key="[0.0, 1.0]"
+        keyValue="[ 1.0,0.50 ]"
+    fieldToInterp="itemPoster.opacity" />
   </Animation>
   </children>
 
